@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header';
+import Mention from './components/Mention';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="_root">
       <Header data={git} />
+      <Mention />
     </div>
   );
 }

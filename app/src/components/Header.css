@@ -6,12 +6,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 ._header_content {
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  width: 65vw;
   height: 80px;
 }
 

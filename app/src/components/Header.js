@@ -10,13 +10,15 @@ import './Header.css';
 const useStyles = makeStyles(() => ({
   avatar: {
     top: '20px',
-    height: '100px',
-    width: '100px',
+    height: '120px',
+    width: '120px',
     border: '6px solid #312f2f',
   },
 }));
 
 const Header = (props) => {
+  console.log(props);
+
   const classes = useStyles();
   return (
     <header className="_header">
