@@ -1,0 +1,43 @@
+.quote_span {
+  width: 60vw;
+  height: auto;
+  position: relative;
+  top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.quote_con {
+  width: 60vw;
+  height: 200px;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.quote_con h2 {
+  /* color: lightsalmon; */
+  color: #73e9df;
+  font-size: 8rem;
+  width: 350px;
+  margin: 0;
+  grid-area: 1 / 1 / 4 / 5;
+  transform: rotate(-15deg);
+  z-index: -1;
+}
+
+.mention_con {
+  height: auto;
+  width: 35vw;
+  grid-area: 3 / 2 / 6 / 6;
+}
+
+.grey {
+  color: grey;
+}
+
+.small-text {
+  font-size: 5px;
+}

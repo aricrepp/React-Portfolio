@@ -1,0 +1,14 @@
+.tabs_container {
+  position: relative;
+  top: 20px;
+}
+
+.tabs_container h2 {
+  position: relative;
+  top: 40px;
+  color: #73e9df;
+  text-align: end;
+  font-size: 8rem;
+  width: 100%;
+  margin: 0;
+}
