@@ -13,6 +13,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
+import Projects from './Projects';
+import About from './About';
 import './css/Tabs.css';
 
 function TabPanel(props) {
@@ -51,7 +53,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: '60vw',
+    width: '65vw',
     flexGrow: 1,
     position: 'relative',
   },
@@ -61,6 +63,16 @@ const customTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#73e9df',
+    },
+    secondary: {
+      main: '#312f2f',
+    },
+  },
+  overrides: {
+    MuiTab: {
+      textColorPrimary: {
+        color: '#ffffff',
+      },
     },
   },
 });
@@ -89,7 +101,7 @@ export default function FullWidthTabs() {
       <h2>{name}</h2>
       <ThemeProvider theme={customTheme}>
         <div className={classes.root}>
-          <AppBar position="static" color="default">
+          <AppBar position="static" color="secondary">
             <Tabs
               value={value}
               onChange={handleChange}
@@ -129,10 +141,10 @@ export default function FullWidthTabs() {
               Repos
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
-              Projects
+              <Projects />
             </TabPanel>
             <TabPanel value={value} index={2} dir={theme.direction}>
-              About
+              <About />
             </TabPanel>
           </SwipeableViews>
         </div>

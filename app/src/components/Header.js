@@ -16,6 +16,12 @@ const useStyles = makeStyles(() => ({
     height: '120px',
     width: '120px',
     border: '8px solid #312f2f',
+    fontFamily: 'Courier New, monospace',
+    fontWeight: 600,
+    fontSize: '2.5em',
+    transform: 'rotate(-15deg)',
+    backgroundColor: '#E9737D',
+    color: '#312f2f',
   },
 }));
 
@@ -39,20 +45,32 @@ const Header = (props) => {
   return (
     <header className="_header">
       <div className="_header_content">
-        <Avatar className={classes.avatar} alt="Aric" src={photo} />
+        <Avatar className={classes.avatar} alt="Aric">
+          ARIC
+        </Avatar>
         <div className="_header_icons">
           <LightTooltip title="LinkedIn" aria-label="LinkedIn">
             <IconButton>
-              <LinkedInIcon
-                style={{ color: 'white', height: '30px', width: '30px' }}
-              />
+              <a
+                href="https://www.linkedin.com/in/aric-repp/"
+                style={{ width: '30px', height: '30px' }}
+              >
+                <LinkedInIcon
+                  style={{ color: 'white', height: '30px', width: '30px' }}
+                />
+              </a>
             </IconButton>
           </LightTooltip>
           <LightTooltip title="Github" aria-label="Github">
             <IconButton>
-              <GitHubIcon
-                style={{ color: 'white', height: '30px', width: '30px' }}
-              />
+              <a
+                href="https://github.com/aricrepp"
+                style={{ width: '30px', height: '30px' }}
+              >
+                <GitHubIcon
+                  style={{ color: 'white', height: '30px', width: '30px' }}
+                />
+              </a>
             </IconButton>
           </LightTooltip>
           <LightTooltip title="Resume" aria-label="Resume">

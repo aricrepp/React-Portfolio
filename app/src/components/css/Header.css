@@ -6,8 +6,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  position: relative;
   top: 0;
+  left: 0;
   z-index: 10;
   border-bottom: 1rem solid #73e9df;
 }

@@ -1,6 +1,8 @@
 .tabs_container {
   position: relative;
-  top: 20px;
+  top: -40px;
+  margin-bottom: 100px;
+  z-index: 5;
 }
 
 .tabs_container h2 {
