@@ -24,7 +24,9 @@ const Quote = () => {
   return (
     <div className="quote_span">
       <div className="quote_con">
-        <h2>QUOTE</h2>
+        <div className="quote_inner">
+          <h2>QUOTE</h2>
+        </div>
         <Card className="mention_con">
           <CardContent className={classes.content}>
             <Typography className={classes.quote}>

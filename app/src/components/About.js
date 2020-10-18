@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -35,12 +35,7 @@ const About = () => {
           </Typography>
         </div>
         <CardContent className={classes.content}>
-          <Typography className={classes.projects}>
-            This passion project turned huge undertaking became a 3 member
-            collaboration with colleagues of mine. EQO's purpose is to create
-            peer to peer connections locally between fans, artists, and venues
-            to capture the dynamic of locality and expand its broadcast.
-          </Typography>
+          <Typography className={classes.projects}>Hello!</Typography>
         </CardContent>
       </Card>
     </div>

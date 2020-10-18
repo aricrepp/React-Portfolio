@@ -7,13 +7,15 @@ import Tabs from './components/Tabs';
 
 function App() {
   const [git, setGit] = useState();
+  const [isFetching, setIsFetching] = useState(false);
 
   useEffect(() => {
     axios
-      .get('https://api.github.com/users/aricrepp')
+      .get('https://api.github.com/users/aricrepp/repos')
       .then((res) => {
         console.log(res.data);
         setGit(res.data);
+        setIsFetching(true);
       })
       .catch((err) => {
         console.log(err);
@@ -22,9 +24,9 @@ function App() {
 
   return (
     <div className="_root">
-      <Header data={git} />
+      <Header />
       <Quote />
-      <Tabs />
+      <Tabs data={git} fetch={isFetching} />
       <div width="100%" height="100%" className="svg_con">
         <svg
           xmlns="http://www.w3.org/2000/svg"

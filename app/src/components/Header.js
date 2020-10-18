@@ -16,12 +16,12 @@ const useStyles = makeStyles(() => ({
     height: '120px',
     width: '120px',
     border: '8px solid #312f2f',
-    fontFamily: 'Courier New, monospace',
-    fontWeight: 600,
-    fontSize: '2.5em',
-    transform: 'rotate(-15deg)',
-    backgroundColor: '#E9737D',
-    color: '#312f2f',
+    // fontFamily: 'Courier New, monospace',
+    // fontWeight: 600,
+    // fontSize: '2.5em',
+    // transform: 'rotate(-15deg)',
+    // backgroundColor: '#E9737D',
+    // color: '#312f2f',
   },
 }));
 
@@ -45,9 +45,7 @@ const Header = (props) => {
   return (
     <header className="_header">
       <div className="_header_content">
-        <Avatar className={classes.avatar} alt="Aric">
-          ARIC
-        </Avatar>
+        <Avatar className={classes.avatar} alt="Aric" src={photo}></Avatar>
         <div className="_header_icons">
           <LightTooltip title="LinkedIn" aria-label="LinkedIn">
             <IconButton>

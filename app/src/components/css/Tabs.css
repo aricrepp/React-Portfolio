@@ -14,3 +14,9 @@
   width: 100%;
   margin: 0;
 }
+
+.tabs_theme_con {
+  -webkit-box-shadow: -5px 5px 15px -6px rgba(110, 110, 110, 1);
+  -moz-box-shadow: -5px 5px 15px -6px rgba(110, 110, 110, 1);
+  box-shadow: -5px 5px 15px -6px rgba(110, 110, 110, 1);
+}

@@ -2,7 +2,7 @@
   width: 60vw;
   height: auto;
   position: relative;
-  top: -20px;
+  top: -30px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,25 +13,31 @@
   height: 200px;
   z-index: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
-.quote_con h2 {
-  /* color: lightsalmon; */
+.quote_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1 / 2 / 4 / 4;
+  z-index: -1;
+}
+.quote_inner h2 {
   color: #73e9df;
   font-size: 8rem;
-  width: 350px;
   margin: 0;
-  grid-area: 1 / 1 / 4 / 5;
-  transform: rotate(-15deg);
+  padding: 0;
+  grid-area: 1 / 2 / 4 / 4;
   z-index: -1;
 }
 
 .mention_con {
   height: auto;
+  background-color: #e5e5eb;
   width: 35vw;
-  grid-area: 3 / 2 / 6 / 6;
+  grid-area: 3 / 3 / 6 / 7;
 }
 
 .grey {

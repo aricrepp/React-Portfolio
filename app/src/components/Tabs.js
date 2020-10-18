@@ -11,10 +11,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import { blue } from '@material-ui/core/colors';
 import Box from '@material-ui/core/Box';
 import Projects from './Projects';
 import About from './About';
+import Repos from './Repos';
 import './css/Tabs.css';
 
 function TabPanel(props) {
@@ -56,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
     width: '65vw',
     flexGrow: 1,
     position: 'relative',
+    boxShadow: '-5px 5px 15px -6px rgba(194,194,194,0.5)',
+    border: '1px solid rgba(230,230,230,0.7)',
   },
 }));
 
@@ -77,7 +79,7 @@ const customTheme = createMuiTheme({
   },
 });
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -99,7 +101,7 @@ export default function FullWidthTabs() {
   return (
     <div className="tabs_container">
       <h2>{name}</h2>
-      <ThemeProvider theme={customTheme}>
+      <ThemeProvider theme={customTheme} className="tabs_theme_con">
         <div className={classes.root}>
           <AppBar position="static" color="secondary">
             <Tabs
@@ -138,7 +140,7 @@ export default function FullWidthTabs() {
             onChangeIndex={handleChangeIndex}
           >
             <TabPanel value={value} index={0} dir={theme.direction}>
-              Repos
+              <Repos repo={props.data} fetched={props.fetch} />
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
               <Projects />
