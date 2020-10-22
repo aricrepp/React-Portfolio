@@ -11,11 +11,37 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     alignItems: 'flex-end',
     padding: '20px 50px 0 50px',
+    '@media (max-width: 500px)': {
+      padding: '30px 20px 0 20px',
+    },
   },
   quote: {
     color: 'grey',
     fontSize: '0.9rem',
-    padding: '0.5rem',
+    padding: '0.2rem',
+    '@media (max-width: 1100px)': {
+      fontSize: '0.8rem',
+    },
+    '@media (max-width: 800px)': {
+      fontSize: '0.8rem',
+    },
+    '@media (max-width: 500px)': {
+      fontSize: '0.8rem',
+    },
+  },
+  quote_title: {
+    color: 'grey',
+    fontSize: '1.1rem',
+    padding: '0.2rem',
+    '@media (max-width: 1100px)': {
+      fontSize: '1rem',
+    },
+    '@media (max-width: 800px)': {
+      fontSize: '0.9rem',
+    },
+    '@media (max-width: 500px)': {
+      fontSize: '0.9rem',
+    },
   },
 }));
 
@@ -34,7 +60,7 @@ const Quote = () => {
               themselves, they wanna tell you you can't do it. If you want
               somethin', go get it. Period.
             </Typography>
-            <Typography className="grey">
+            <Typography className={classes.quote_title}>
               <b>- The Pursuit of Happyness</b>
             </Typography>
           </CardContent>

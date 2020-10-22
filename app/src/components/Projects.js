@@ -21,11 +21,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '0.9rem',
     padding: '0.5rem',
     width: '60%',
+    '@media (max-width: 500px)': {
+      display: 'flex',
+      flexDirection: 'column',
+    },
   },
   image: {
     width: '200px',
     height: '200px',
     padding: '0 50px 0 50px',
+    '@media (max-width: 500px)': {
+      width: '150px',
+      height: '150px',
+    },
   },
   chipRoot: {
     display: 'flex',
@@ -77,6 +85,11 @@ const Projects = () => {
         </div>
         <CardContent className={classes.content}>
           <Typography className={classes.projects}>
+            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
+            <i style={{ padding: '10px' }}>Primary Designer</i>
+            <i style={{ padding: '10px' }}>Back-end Developer</i>
+          </Typography>
+          <Typography className={classes.projects}>
             This passion project turned huge undertaking became a 3 member
             collaboration with colleagues of mine. EQO's purpose is to create
             peer to peer connections locally between fans, artists, and venues
@@ -90,11 +103,7 @@ const Projects = () => {
           >
             Website
           </Button>
-          <Typography className={classes.projects}>
-            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
-            <i style={{ padding: '10px' }}>Primary Designer</i>
-            <i style={{ padding: '10px' }}>Secondary Back-end Developer</i>
-          </Typography>
+
           <div className={classes.chipRoot}>
             <h5>Old Stack:</h5>
             {oldChipData.map((data) => {

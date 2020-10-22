@@ -58,6 +58,15 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     boxShadow: '-5px 5px 15px -6px rgba(194,194,194,0.5)',
     border: '1px solid rgba(230,230,230,0.7)',
+    '@media (max-width: 1100px)': {
+      width: '75vw',
+    },
+    '@media (max-width: 800px)': {
+      width: '85vw',
+    },
+    '@media (max-width: 500px)': {
+      width: '95vw',
+    },
   },
 }));
 

@@ -22,6 +22,10 @@ const useStyles = makeStyles(() => ({
     // transform: 'rotate(-15deg)',
     // backgroundColor: '#E9737D',
     // color: '#312f2f',
+    '@media (max-width: 500px)': {
+      height: '80px',
+      width: '80px',
+    },
   },
 }));
 
