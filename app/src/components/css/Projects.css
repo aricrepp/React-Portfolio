@@ -30,6 +30,15 @@
   margin: 0;
 }
 
+.mention_con h6 {
+  text-align: center;
+  /* color: #73e9df; */
+  color: #31302f;
+  font-size: 3rem;
+  padding: 0 50px 0 50px;
+  margin: 0;
+}
+
 .description_con {
   display: flex;
   flex-direction: column;
@@ -44,6 +53,13 @@
 
 /* *********************************** 1100px */
 @media (max-width: 1100px) {
+  .projects_title_con {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px 0 10px;
+  }
 }
 
 /* *********************************** 800px */
@@ -53,6 +69,7 @@
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    padding: 10px 0 0 10px;
   }
 }
 

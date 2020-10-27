@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import eqo from '../assets/new-favicon.png';
+import fitness from '../assets/logo_size.jpg';
 import './css/Projects.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +34,15 @@ const useStyles = makeStyles((theme) => ({
     '@media (max-width: 500px)': {
       width: '150px',
       height: '150px',
+    },
+  },
+  image2: {
+    width: '260px',
+    height: '120px',
+    padding: '0 50px 0 50px',
+    '@media (max-width: 500px)': {
+      width: '200px',
+      height: '100px',
     },
   },
   chipRoot: {
@@ -121,6 +131,53 @@ const Projects = () => {
           </div>
           <div className={classes.chipRoot}>
             <h5>New Stack:</h5>
+            {newChipData.map((data) => {
+              let icon;
+              return (
+                <li key={data.key}>
+                  <Chip
+                    icon={icon}
+                    label={data.label}
+                    className={classes.chip}
+                  />
+                </li>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+      <hr></hr>
+      <Card className="mention_con">
+        <div className="projects_title_con">
+          <h6>Anywhere Fitness</h6>
+          <img src={fitness} className={classes.image2} />
+        </div>
+        <CardContent className={classes.content}>
+          <Typography className={classes.projects}>
+            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
+            <i style={{ padding: '10px' }}>Primary Designer</i>
+          </Typography>
+          <Typography className={classes.projects}>
+            AnywhereFitness is the all-in-one solution to meet your
+            “on-location” fitness class needs for Instructors and Clients alike.
+            This was the first project at Lambda in which I was Lead Front End
+            Developer. This required me to manage the other 3 front end members
+            to deliver a working demo.
+          </Typography>
+          <Button
+            className={classes.button}
+            href="https://musing-knuth-63bdac.netlify.app/login"
+            variant="contained"
+            color="primary"
+          >
+            Website
+          </Button>
+          <Typography className={classes.projects}>
+            <b>NOTE:</b> Please use the phrases <b>instructor</b> and{' '}
+            <b>password</b> to access the demo login
+          </Typography>
+          <div className={classes.chipRoot}>
+            <h5>Stack:</h5>
             {newChipData.map((data) => {
               let icon;
               return (
