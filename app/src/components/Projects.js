@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Chip from '@material-ui/core/Chip';
 import eqo from '../assets/new-favicon.png';
 import fitness from '../assets/logo_size.jpg';
+import tandem from '../assets/logo192.png';
 import './css/Projects.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +39,15 @@ const useStyles = makeStyles((theme) => ({
   },
   image2: {
     width: '260px',
+    height: '120px',
+    padding: '0 50px 0 50px',
+    '@media (max-width: 500px)': {
+      width: '200px',
+      height: '100px',
+    },
+  },
+  image3: {
+    width: '120px',
     height: '120px',
     padding: '0 50px 0 50px',
     '@media (max-width: 500px)': {
@@ -86,6 +96,11 @@ const Projects = () => {
     { key: 4, label: 'Express' },
     { key: 5, label: 'PostgreSQL' },
   ]);
+  const [tandemData, settandemData] = useState([
+    { key: 0, label: 'React' },
+    { key: 1, label: 'MaterialUI' },
+    { key: 2, label: 'Styled-Components' },
+  ]);
   return (
     <div className="projects_con">
       <Card className="mention_con">
@@ -132,6 +147,53 @@ const Projects = () => {
           <div className={classes.chipRoot}>
             <h5>New Stack:</h5>
             {newChipData.map((data) => {
+              let icon;
+              return (
+                <li key={data.key}>
+                  <Chip
+                    icon={icon}
+                    label={data.label}
+                    className={classes.chip}
+                  />
+                </li>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+      <hr></hr>
+      <Card className="mention_con">
+        <div className="projects_title_con">
+          <h6>Tandem Challenge</h6>
+          <img src={tandem} className={classes.image3} />
+        </div>
+        <CardContent className={classes.content}>
+          <Typography className={classes.projects}>
+            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
+            <i style={{ padding: '10px' }}>Primary Designer</i>
+          </Typography>
+          <Typography className={classes.projects}>
+            Tandem Challenge 2020 was a job application project challenge
+            promoted by Tandem Software. My goal was to create an application
+            that displays trivia questions with multiple choice answers to
+            select from. Use creative license in terms of how you want us to see
+            this game. At minimum, the player can view the questsion(s), the
+            answer choices, the correct answer upon submission, and their score.
+            It could be a user interface (UI), command line tool, etc. Feel free
+            to use whatever framework or language you are comfortable with.
+          </Typography>
+          <Button
+            className={classes.button}
+            href="https://zen-kirch-055fb4.netlify.app/"
+            variant="contained"
+            color="primary"
+          >
+            Website
+          </Button>
+
+          <div className={classes.chipRoot}>
+            <h5>Stack:</h5>
+            {tandemData.map((data) => {
               let icon;
               return (
                 <li key={data.key}>
