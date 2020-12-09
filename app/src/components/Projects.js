@@ -103,65 +103,7 @@ const Projects = () => {
   ]);
   return (
     <div className="projects_con">
-      <Card className="mention_con">
-        <div className="projects_title_con">
-          <h4>EQO</h4>
-          <img src={eqo} className={classes.image} />
-        </div>
-        <CardContent className={classes.content}>
-          <Typography className={classes.projects}>
-            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
-            <i style={{ padding: '10px' }}>Primary Designer</i>
-            <i style={{ padding: '10px' }}>Back-end Developer</i>
-          </Typography>
-          <Typography className={classes.projects}>
-            This passion project turned huge undertaking became a 3 member
-            collaboration with colleagues of mine. EQO's purpose is to create
-            peer to peer connections locally between fans, artists, and venues
-            to capture the dynamic of locality and expand its broadcast.
-          </Typography>
-          <Button
-            className={classes.button}
-            href="http://www.eqomusic.com"
-            variant="contained"
-            color="primary"
-          >
-            Website
-          </Button>
-
-          <div className={classes.chipRoot}>
-            <h5>Old Stack:</h5>
-            {oldChipData.map((data) => {
-              let icon;
-              return (
-                <li key={data.key}>
-                  <Chip
-                    icon={icon}
-                    label={data.label}
-                    className={classes.chipOld}
-                  />
-                </li>
-              );
-            })}
-          </div>
-          <div className={classes.chipRoot}>
-            <h5>New Stack:</h5>
-            {newChipData.map((data) => {
-              let icon;
-              return (
-                <li key={data.key}>
-                  <Chip
-                    icon={icon}
-                    label={data.label}
-                    className={classes.chip}
-                  />
-                </li>
-              );
-            })}
-          </div>
-        </CardContent>
-      </Card>
-      <hr></hr>
+      
       <Card className="mention_con">
         <div className="projects_title_con">
           <h6>Tandem Challenge</h6>
@@ -240,6 +182,65 @@ const Projects = () => {
           </Typography>
           <div className={classes.chipRoot}>
             <h5>Stack:</h5>
+            {newChipData.map((data) => {
+              let icon;
+              return (
+                <li key={data.key}>
+                  <Chip
+                    icon={icon}
+                    label={data.label}
+                    className={classes.chip}
+                  />
+                </li>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+      <hr></hr>
+      <Card className="mention_con">
+        <div className="projects_title_con">
+          <h4>EQO</h4>
+          <img src={eqo} className={classes.image} />
+        </div>
+        <CardContent className={classes.content}>
+          <Typography className={classes.projects}>
+            <b>Roles:</b> <i style={{ padding: '10px' }}>Front-end Developer</i>
+            <i style={{ padding: '10px' }}>Primary Designer</i>
+            <i style={{ padding: '10px' }}>Back-end Developer</i>
+          </Typography>
+          <Typography className={classes.projects}>
+            This passion project turned huge undertaking became a 3 member
+            collaboration with colleagues of mine. EQO's purpose is to create
+            peer to peer connections locally between fans, artists, and venues
+            to capture the dynamic of locality and expand its broadcast.
+          </Typography>
+          <Button
+            className={classes.button}
+            href="http://www.eqomusic.com"
+            variant="contained"
+            color="primary"
+          >
+            Website
+          </Button>
+
+          <div className={classes.chipRoot}>
+            <h5>Old Stack:</h5>
+            {oldChipData.map((data) => {
+              let icon;
+              return (
+                <li key={data.key}>
+                  <Chip
+                    icon={icon}
+                    label={data.label}
+                    className={classes.chipOld}
+                  />
+                </li>
+              );
+            })}
+          </div>
+          <div className={classes.chipRoot}>
+            <h5>New Stack:</h5>
             {newChipData.map((data) => {
               let icon;
               return (

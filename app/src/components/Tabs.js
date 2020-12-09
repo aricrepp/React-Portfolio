@@ -121,18 +121,18 @@ export default function FullWidthTabs(props) {
               centered
             >
               <Tab
-                label="Repos"
-                onClick={(e) => {
-                  handleClick(e, 'REPOS');
-                }}
-                {...a11yProps(0)}
-              />
-              <Tab
                 label="Projects"
                 onClick={(e) => {
                   handleClick(e, 'PROJECTS');
                 }}
                 {...a11yProps(1)}
+              />
+              <Tab
+                label="Repos"
+                onClick={(e) => {
+                  handleClick(e, 'REPOS');
+                }}
+                {...a11yProps(0)}
               />
               <Tab
                 label="About"
@@ -149,10 +149,10 @@ export default function FullWidthTabs(props) {
             onChangeIndex={handleChangeIndex}
           >
             <TabPanel value={value} index={0} dir={theme.direction}>
-              <Repos repo={props.data} fetched={props.fetch} />
+              <Projects />
             </TabPanel>
             <TabPanel value={value} index={1} dir={theme.direction}>
-              <Projects />
+              <Repos repo={props.data} fetched={props.fetch} />
             </TabPanel>
             <TabPanel value={value} index={2} dir={theme.direction}>
               <About />
