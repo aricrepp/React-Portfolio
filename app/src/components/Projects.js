@@ -8,6 +8,7 @@ import Chip from '@material-ui/core/Chip';
 import eqo from '../assets/new-favicon.png';
 import fitness from '../assets/logo_size.jpg';
 import tandem from '../assets/logo192.png';
+import upGrade from '../assets/up-24.png';
 import './css/Projects.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -55,6 +56,15 @@ const useStyles = makeStyles((theme) => ({
       height: '100px',
     },
   },
+  image3: {
+    width: '60px',
+    height: '60px',
+    padding: '0 50px 0 50px',
+    '@media (max-width: 500px)': {
+      width: '200px',
+      height: '100px',
+    },
+  },
   chipRoot: {
     display: 'flex',
     justifyContent: 'center',
@@ -93,8 +103,15 @@ const Projects = () => {
     { key: 1, label: 'Redux' },
     { key: 2, label: 'Styled-Components' },
     { key: 3, label: 'NodeJS' },
-    { key: 4, label: 'Express' },
+    { key: 4, label: 'ExpressJS' },
     { key: 5, label: 'PostgreSQL' },
+  ]);
+  const [BackendData, setBackendData] = useState([
+    { key: 0, label: 'NodeJS' },
+    { key: 1, label: 'ExpressJS' },
+    { key: 2, label: 'KnexJS' },
+    { key: 3, label: 'Authentication' },
+    { key: 4, label: 'PostgreSQL' },
   ]);
   const [tandemData, settandemData] = useState([
     { key: 0, label: 'React' },
@@ -115,14 +132,11 @@ const Projects = () => {
             <i style={{ padding: '10px' }}>Primary Designer</i>
           </Typography>
           <Typography className={classes.projects}>
-            Tandem Challenge 2020 was a job application project challenge
+            Tandem Challenge 2020 was a project challenge
             promoted by Tandem Software. My goal was to create an application
-            that displays trivia questions with multiple choice answers to
-            select from. Use creative license in terms of how you want us to see
-            this game. At minimum, the player can view the questsion(s), the
-            answer choices, the correct answer upon submission, and their score.
-            It could be a user interface (UI), command line tool, etc. Feel free
-            to use whatever framework or language you are comfortable with.
+            that displays trivia questions with multiple choice answers over a 1 week sprint.
+            With roughly 2 hours a day to work on it, I pulled together React Hooks methods 
+            and MaterialUI for my styling. To display my questions I used Open Trivia DB API.
           </Typography>
           <Button
             className={classes.button}
@@ -132,10 +146,69 @@ const Projects = () => {
           >
             Website
           </Button>
-
+          <Button
+            className={classes.button}
+            href="https://github.com/aricrepp/Tandem_Challenge"
+            variant="contained"
+            color="primary"
+          >
+            Codebase
+          </Button>
           <div className={classes.chipRoot}>
             <h5>Stack:</h5>
             {tandemData.map((data) => {
+              let icon;
+              return (
+                <li key={data.key}>
+                  <Chip
+                    icon={icon}
+                    label={data.label}
+                    className={classes.chip}
+                  />
+                </li>
+              );
+            })}
+          </div>
+        </CardContent>
+      </Card>
+      <hr></hr>
+      <Card className="mention_con">
+        <div className="projects_title_con">
+          <h6>upGrade Tutors</h6>
+          <img src={upGrade} className={classes.image3} />
+        </div>
+        <CardContent className={classes.content}>
+          <Typography className={classes.projects}>
+            <b>Roles:</b> <i style={{ padding: '10px' }}>Back-end Developer</i>
+          </Typography>
+          <Typography className={classes.projects}>
+            Lead Back-end development over the course of 2 sprint weeks in collaboration 
+            with 3 front end developers to create upGrade Tutors. Managed routes, authorization, 
+            migrations, and Heroku deployment entirely.
+          </Typography>
+          <Button
+            className={classes.button}
+            href="https://upgradetutors.netlify.app/"
+            variant="contained"
+            color="primary"
+          >
+            Website
+          </Button>
+          <Button
+            className={classes.button}
+            href="https://github.com/School-In-The-Cloud-1-Sept-BW-PT/Back-End"
+            variant="contained"
+            color="primary"
+          >
+            Codebase
+          </Button>
+          <Typography className={classes.projects}>
+            <b>NOTE:</b> Please use <b>admin1@gmail.com</b> and {' '}
+            <b>password</b> to access the demo login
+          </Typography>
+          <div className={classes.chipRoot}>
+            <h5>Stack:</h5>
+            {BackendData.map((data) => {
               let icon;
               return (
                 <li key={data.key}>
@@ -175,6 +248,14 @@ const Projects = () => {
             color="primary"
           >
             Website
+          </Button>
+          <Button
+            className={classes.button}
+            href="https://github.com/Build-Week-Anywhere-Fitness-PT-Danny/front-end"
+            variant="contained"
+            color="primary"
+          >
+            Codebase
           </Button>
           <Typography className={classes.projects}>
             <b>NOTE:</b> Please use the phrases <b>instructor</b> and{' '}
