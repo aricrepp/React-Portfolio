@@ -16,7 +16,7 @@ const mailTransport = nodemailer.createTransport({
 })
 
 exports.sendMail = functions.https.onRequest((req, res) => {
-    res.set('Access-Control-Allow-Origin', '$http_origin')
+    res.set('Access-Control-Allow-Origin', '*')
     res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
     res.set('Access-Control-Allow-Headers', 'Content-Type', 'Authorization')
 

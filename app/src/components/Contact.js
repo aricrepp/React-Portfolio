@@ -26,7 +26,7 @@ const Contact = (props) => {
 
     const sendEmail = () => {
         Axios.post(
-            'https://us-central1-portfolio-70023.cloudfunctions.net/submit',
+            'https://cors-anywhere.herokuapp.com/https://us-central1-portfolio-70023.cloudfunctions.net/submit',
             formData
         )
         .then(res => {
