@@ -16,7 +16,17 @@ const mailTransport = nodemailer.createTransport({
 })
 
 exports.sendMail = functions.https.onRequest((req, res) => {
-    cors(req, res, () => {  
+    res.set('Access-Control-Allow-Origin', '$http_origin')
+    res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
+    res.set('Access-Control-Allow-Headers', 'Content-Type', 'Authorization')
+
+    if (req.method === 'OPTIONS') {
+    res.end()
+    } else {
+    cors(req, res, () => {
+        if (req.method !== 'POST') {
+        return
+        }
 
         const mailOptions = {
         from: req.body.email,
@@ -34,5 +44,5 @@ exports.sendMail = functions.https.onRequest((req, res) => {
             return res.send('Sended');
         });
     })
-    
+    }
 })
