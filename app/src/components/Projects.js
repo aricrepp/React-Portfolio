@@ -9,7 +9,7 @@ import eqo from '../assets/new-favicon.png';
 import fitness from '../assets/logo_size.jpg';
 import tandem from '../assets/logo192.png';
 import upGrade from '../assets/up-24.png';
-import './css/Projects.css';
+import './styles/Projects.css';
 
 const useStyles = makeStyles((theme) => ({
   content: {

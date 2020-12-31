@@ -1,0 +1,103 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+
+.contact-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4e96b1;
+}
+
+.contact-wrapper h3{
+    color: #f9f9f9;
+    font-family: 'Squada One', cursive;
+    font-size: 2.0rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.contact-con{
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-callout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-con h4{
+    color: #f9f9f9;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-size: 2.0rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.contact-con h5{
+    color: #f9f9f9;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin: 10px;
+}
+
+.contact-con form{
+    display: table;
+    margin: 40px auto;
+}
+
+.contact-con input, textarea{
+    font: 18px Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    display: block;
+    border: none;
+    padding: 20px;
+    width: 400px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-con input::placeholder,textarea::placeholder{
+    transition: all 0.2s ease-in-out;
+    color: #999;
+    font: 18px Helvetica, Arial, sans-serif;
+}
+
+.contact-con textarea{
+    height: 200px;
+    resize: none;
+}
+
+.contact-con button{
+    transition: all 0.2s ease-in-out;
+    font: 18px Helvetica, Arial, sans-serif;
+    border: none;
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.contact-con button:hover{
+    background: rgb(78, 77, 77);
+    cursor: pointer;
+}

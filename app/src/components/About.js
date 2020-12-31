@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
-import './css/About.css';
+import './styles/About.css';
 
 const useStyles = makeStyles((theme) => ({
   content: {

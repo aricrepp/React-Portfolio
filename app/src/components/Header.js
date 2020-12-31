@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import photo from '../assets/aric-small.jpg';
 import resume from '../assets/Resume.pdf';
-import './css/Header.css';
+import './styles/Header.css';
 
 const useStyles = makeStyles(() => ({
   avatar: {

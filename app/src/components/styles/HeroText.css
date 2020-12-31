@@ -1,0 +1,123 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+
+.herotext-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+.herotext-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 70px);
+    height: 30%;
+    margin: 2%;
+}
+
+.herotext-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 70px);
+    height: 30%;
+    margin: 2%;
+}
+
+.herotext-callout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 70px);
+    height: 20%;
+}
+
+.herotext-content{
+    display: flex;
+    align-items: center;
+    font-size: 1.0rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 500;
+}
+
+.herotext-content img{
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+} 
+
+.herotext-top a{
+    color: #333;
+    font-size: 5rem;
+    text-decoration: none;
+}
+
+.herotext-desc{
+    width: 46%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    margin: 2%;
+    margin-left: 15%;
+}
+
+.herotext-desc hr{
+    width: 60%;
+    height: 0.3rem;
+    background-color: #41b2d2;
+    border: none;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 1rem;
+}
+
+.herotext-desc h4{
+    font-size: 2.2rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #333;
+}
+.herotext-desc h5{
+    font-size: 1rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 300;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.herotext-quote{
+    width: 46%;
+    height: 100%;
+    margin: 2%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.herotext-quote h4{
+    font-size: 1.3rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.herotext-quote h5{
+    font-size: 1.1rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 300;
+    color: #333;
+    line-height: 1.5rem;
+    padding: 2%;
+    font-style: italic;
+}

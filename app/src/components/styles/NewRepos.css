@@ -1,0 +1,200 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+
+.repos-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.repos-wrapper h3{
+    color: #423E3B;
+    font-family: 'Squada One', cursive;
+    font-size: 2.0rem;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.repos-wrapper h4{
+    color: #423E3B;
+    font-family: 'Squada One', cursive;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.repos-wrapper h5{
+    color: #423E3B;
+    font-family: 'Squada One', cursive;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.calender-repos-con{
+    margin: 0.5rem;
+    width: 65%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.github-link {
+    text-decoration: none;
+    color: black;
+    text-decoration: underline;
+}
+
+.repo-card-list-con {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.repo-card-container {
+    display: flex;
+    flex-direction: row;
+    width: 290px;
+    padding: 1rem 0 2rem 0;
+}
+
+.repo-card {
+    margin: 25px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0.15rem solid #aaaaaa;
+    box-shadow: 0 0 6px -1px #b4b4b4;
+    transition: all ease-in-out 2s;
+}
+
+.repo-card-content {
+    flex: 1 0 auto;
+    padding: 1.5rem 1rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.repo-card-title {
+    top: 0;
+    width: 100%;
+    background-color: #312f2f;
+    color: white;
+    padding: 0.7rem;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 500;
+}
+
+.repo-footer {
+    border-top: 1px solid rgb(204, 200, 200);
+    background-color: rgb(245, 245, 245);
+    position: static;
+    flex-shrink: 0;
+    padding: 10px;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 900;
+}
+
+.repo-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+    color: #68b7d4;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
+    color: #0c5874;
+}
+
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-tabs{
+    background-color: #fff;
+    border-left: 0.15rem solid  #d4d4d4;
+    border-top: 0.15rem solid  #d4d4d4;
+    border-bottom: 0.15rem solid  #d4d4d4;
+}
+
+.pagination-tabs-first{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination-tabs-last{
+    border-right: 0.15rem solid  #d4d4d4;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pagination-tabs a{
+    text-decoration: none;
+    color: #333;
+    font-family: "OpenSans-Bold", Helvetica, Arial, serif;
+    font-weight: 900;
+    display: block;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-tabs-active{
+    background-color: #68b7d4;
+}
+
+
+  /* *********************************** 1100px */
+@media (max-width: 1100px) {
+    .calender-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        max-width: 90%;
+    }
+}
+
+  /* *********************************** 800px */
+@media (max-width: 800px) {
+    .calender-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        max-width: 100%;
+    }
+}
+
+  /* *********************************** 500px */
+@media (max-width: 500px) {
+    .calender-con {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        max-width: 100%;
+    }
+}
