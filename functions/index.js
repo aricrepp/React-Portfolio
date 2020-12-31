@@ -1,10 +1,11 @@
 const functions = require('firebase-functions');
-const nodemailer = require('nodemailer')
-const cors = require('cors')({
-  origin: true
-})
+const nodemailer = require('nodemailer');
+const admin = require('firebase-admin')
+const cors = require('cors')({origin: true});
 const gmailEmail = functions.config().gmail.email
 const gmailPassword = functions.config().gmail.password
+
+admin.initializeApp();
 
 const mailTransport = nodemailer.createTransport({
     service: 'gmail',
@@ -14,18 +15,8 @@ const mailTransport = nodemailer.createTransport({
     },
 })
 
-exports.submit = functions.https.onRequest((req, res) => {
-    res.set('Access-Control-Allow-Origin', '*')
-    res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
-    res.set('Access-Control-Allow-Headers', '*')
-
-    if (req.method === 'OPTIONS') {
-    res.end()
-    } else {
-    cors(req, res, () => {
-        if (req.method !== 'POST') {
-        return
-        }
+exports.sendMail = functions.https.onRequest((req, res) => {
+    cors(req, res, () => {  
 
         const mailOptions = {
         from: req.body.email,
@@ -36,13 +27,12 @@ exports.submit = functions.https.onRequest((req, res) => {
         html: `<p>${req.body.message}</p>`,
         }
 
-        return mailTransport.sendMail(mailOptions).then(() => {
-        console.log('New email sent to:', gmailEmail)
-        res.status(200).send({
-            isEmailSend: true
-        })
-        return
-        })
+        return mailTransport.sendMail(mailOptions, (erro, info) => {
+            if(erro){
+                return res.send(erro.toString());
+            }
+            return res.send('Sended');
+        });
     })
-    }
+    
 })
