@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import * as firebase from 'firebase/app';
-import { Axios, db, functions } from '../firebase/firebaseConfig'
+import { Axios, db } from '../firebase/firebaseConfig'
 import './styles/Contact.css';
 
 const Contact = (props) => {
