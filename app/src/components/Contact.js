@@ -28,7 +28,7 @@ const Contact = (props) => {
 
     const sendEmail = () => {
         const callable = functions.httpsCallable('emailMessage');
-        return callable({{
+        return callable({
             name: formData.name,
             email: formData.email,
             message: formData.message
