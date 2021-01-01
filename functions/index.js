@@ -1,48 +1,56 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
-const admin = require('firebase-admin')
+const admin = require('firebase-admin');
+const smtpTransport = require('nodemailer-smtp-transport');
 const cors = require('cors')({origin: true});
-const gmailEmail = functions.config().gmail.email
-const gmailPassword = functions.config().gmail.password
+const gmailEmail = functions.config().gmail.email;
+const gmailPassword = functions.config().gmail.password;
 
 admin.initializeApp();
 
-const mailTransport = nodemailer.createTransport({
+const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
-    user: gmailEmail,
-    pass: gmailPassword,
-    },
-})
+        user: gmailEmail,
+        pass: gmailPassword
+    }
+}));
 
-exports.sendMail = functions.https.onRequest((req, res) => {
-    res.set('Access-Control-Allow-Origin', '*')
-    res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
-    res.set('Access-Control-Allow-Headers', 'Content-Type', 'Authorization')
-
-    if (req.method === 'OPTIONS') {
-    res.end()
-    } else {
-    cors(req, res, () => {
-        if (req.method !== 'POST') {
-        return
-        }
+exports.emailMessage = functions.https.onRequest((req, res) => {
+    const { name, email, message } = req.body;
+    return cors(req, res, () => {
+        const text = `<div>
+            <h4>Information</h4>
+            <ul>
+            <li>
+                Name - ${name || ""}
+            </li>
+            <li>
+                Email - ${email || ""}
+            </li>
+            </ul>
+            <h4>Message</h4>
+            <p>${message || ""}</p>
+        </div>`;
 
         const mailOptions = {
-        from: req.body.email,
-        replyTo: req.body.email,
-        to: gmailEmail,
-        subject: `${req.body.name} just messaged me from my website`,
-        text: req.body.message,
-        html: `<p>${req.body.message}</p>`,
+            from: email,
+            replyTo: email,
+            to: gmailEmail,
+            subject: `${name} just messaged me from my website`,
+            text: text,
+            html: text
         }
-
-        return mailTransport.sendMail(mailOptions, (erro, info) => {
-            if(erro){
-                return res.send(erro.toString());
-            }
-            return res.send('Sended');
+    
+        transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error.message);
+        }
+        res.status(200).send({
+            message: "success"
+        })
         });
-    })
-    }
-})
+    }).catch(() => {
+        res.status(500).send("error");
+    });
+});

@@ -33,7 +33,8 @@ const Contact = (props) => {
         db.collection('emails').add({
             name: formData.name,
             email: formData.email,
-            message: formData.message
+            message: formData.message,
+            time: new Date(),
         })
         })
         .catch(error => {
