@@ -3,7 +3,6 @@ import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/firestore';
 import 'firebase/functions';
-import Axios from 'axios'
 
 const config = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -20,4 +19,4 @@ const app = firebase.app();
 const db = firebase.firestore();
 const functions = firebase.functions();
 
-export { Axios, db, app, functions }
+export {app, db, functions}

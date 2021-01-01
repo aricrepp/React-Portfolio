@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import * as firebase from 'firebase/app';
-import { Axios, db, functions } from '../firebase/firebaseConfig'
+import { db, functions } from '../firebase/firebaseConfig'
 import './styles/Contact.css';
-import { emailMessage } from '../../../functions';
 
 const Contact = (props) => {
 
@@ -27,7 +26,7 @@ const Contact = (props) => {
     }
 
     const sendEmail = () => {
-        const callable = functions.httpsCallable('emailMessage');
+        const callable = functions.httpsCallable('emailMessage')
         return callable({
             name: formData.name,
             email: formData.email,
