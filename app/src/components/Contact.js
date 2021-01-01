@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import * as firebase from 'firebase/app';
-import { Axios, db } from '../firebase/firebaseConfig'
+import { Axios, db, functions } from '../firebase/firebaseConfig'
 import './styles/Contact.css';
+import { emailMessage } from '../../../functions';
 
 const Contact = (props) => {
 
@@ -26,10 +27,12 @@ const Contact = (props) => {
     }
 
     const sendEmail = () => {
-        Axios.post(
-            'https://us-central1-portfolio-70023.cloudfunctions.net/emailMessage',
-            formData
-        )
+        const callable = functions.httpsCallable('emailMessage');
+        return callable({{
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        })
         .then(res => {
         db.collection('emails').add({
             name: formData.name,

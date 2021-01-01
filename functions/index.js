@@ -15,39 +15,50 @@ const transporter = nodemailer.createTransport(smtpTransport({
 
 exports.emailMessage = functions.https.onRequest((req, res) => {
     const { name, email, message } = req.body;
-    return cors(req, res, () => {
-        const text = `<div>
-            <h4>Information</h4>
-            <ul>
-            <li>
-                Name - ${name || ""}
-            </li>
-            <li>
-                Email - ${email || ""}
-            </li>
-            </ul>
-            <h4>Message</h4>
-            <p>${message || ""}</p>
-        </div>`;
 
-        const mailOptions = {
-            from: email,
-            replyTo: email,
-            to: gmailEmail,
-            subject: `${name} just messaged me from my website`,
-            text: text,
-            html: text
-        }
+    res.set('Access-Control-Allow-Origin', '*');
     
-        transporter.sendMail(mailOptions, function(error, info){
-            if(error){
-                console.log(error.message);
+    if (req.method === 'OPTIONS') {
+        res.set('Access-Control-Allow-Methods', 'GET');
+        res.set('Access-Control-Allow-Headers', 'Content-Type');
+        res.set('Access-Control-Max-Age', '3600');
+        res.status(204).send('');
+    } else {
+        return cors(req, res, () => {
+            const text = `<div>
+                <h4>Information</h4>
+                <ul>
+                <li>
+                    Name - ${name || ""}
+                </li>
+                <li>
+                    Email - ${email || ""}
+                </li>
+                </ul>
+                <h4>Message</h4>
+                <p>${message || ""}</p>
+            </div>`;
+    
+            const mailOptions = {
+                from: email,
+                replyTo: email,
+                to: gmailEmail,
+                subject: `${name} just messaged me from my website`,
+                text: text,
+                html: text
             }
-            res.status(200).send({
-                message: "success"
-            })
+        
+            transporter.sendMail(mailOptions, function(error, info){
+                if(error){
+                    console.log(error.message);
+                }
+                res.status(200).send({
+                    message: "success"
+                })
+            });
+        }).catch(() => {
+            res.status(500).send("error");
         });
-    }).catch(() => {
-        res.status(500).send("error");
-    });
+    }
+    
 });

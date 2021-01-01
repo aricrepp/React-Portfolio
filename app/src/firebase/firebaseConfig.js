@@ -16,6 +16,8 @@ const config = {
 
 firebase.initializeApp(config)
 
-const db = firebase.firestore()
+const app = firebase.app();
+const db = firebase.firestore();
+const functions = firebase.functions();
 
-export { Axios, db }
+export { Axios, db, app, functions }
