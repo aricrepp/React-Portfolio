@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { Axios, db } from '../firebase/firebaseConfig'
+import * as firebase from 'firebase/app';
+import { Axios, db, functions } from '../firebase/firebaseConfig'
 import './styles/Contact.css';
 
 const Contact = (props) => {
@@ -26,7 +27,7 @@ const Contact = (props) => {
 
     const sendEmail = () => {
         Axios.post(
-            'https://cors-anywhere.herokuapp.com/https://us-central1-portfolio-70023.cloudfunctions.net/submit',
+            'https://us-central1-portfolio-70023.cloudfunctions.net/emailMessage',
             formData
         )
         .then(res => {

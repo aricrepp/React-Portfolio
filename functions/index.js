@@ -1,12 +1,9 @@
 const functions = require('firebase-functions');
 const nodemailer = require('nodemailer');
-const admin = require('firebase-admin');
 const smtpTransport = require('nodemailer-smtp-transport');
 const cors = require('cors')({origin: true});
 const gmailEmail = functions.config().gmail.email;
 const gmailPassword = functions.config().gmail.password;
-
-admin.initializeApp();
 
 const transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
@@ -43,12 +40,12 @@ exports.emailMessage = functions.https.onRequest((req, res) => {
         }
     
         transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            console.log(error.message);
-        }
-        res.status(200).send({
-            message: "success"
-        })
+            if(error){
+                console.log(error.message);
+            }
+            res.status(200).send({
+                message: "success"
+            })
         });
     }).catch(() => {
         res.status(500).send("error");
