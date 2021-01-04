@@ -3,10 +3,21 @@ import eqo from '../assets/eqo.gif';
 import fitness from '../assets/fitness.gif';
 import tandem from '../assets/Tandem.gif';
 import upGrade from '../assets/upGrade.gif';
+import reactChat from '../assets/reactChat.gif';
 
 export default [
     {
         id: 1,
+        title: 'Game Lobby Chat',
+        img: reactChat,
+        website: 'https://wonderful-lovelace-70d173.netlify.app/',
+        repo: 'https://github.com/aricrepp/React-Game-Lobby',
+        roles: 'Front End Developer, Back End Developer',
+        desc: 'In my attempt to gain more knowledge I decided to build a React based Game Chat Lobby with Firebase. The app utilizes the Google platform so it also uses OAuth to verify users, uses Firestore for serverless storage, and Cloud Functions to detect swear words in chat. ',
+        stack: ['React', 'Firebase', 'OAuth']
+    },
+    {
+        id: 2,
         title: 'Tandem Challenge',
         img: tandem,
         website: 'https://zen-kirch-055fb4.netlify.app/',
@@ -16,7 +27,7 @@ export default [
         stack: ['React', 'MaterialUI', 'API']
     },
     {
-        id: 2,
+        id: 3,
         title: 'upGrade Tutors',
         img: upGrade,
         website: 'https://upgradetutors.netlify.app/',
@@ -26,7 +37,7 @@ export default [
         stack: ['NodeJS', 'ExpressJS', 'PostgreSQL', 'Heroku']
     },
     {
-        id: 3,
+        id: 4,
         title: 'Anywhere Fitness',
         img: fitness,
         website: 'https://musing-knuth-63bdac.netlify.app/login',
@@ -36,7 +47,7 @@ export default [
         stack: ['React', 'Redux', 'MaterialUI']
     },
     {
-        id: 4,
+        id: 5,
         title: 'EQO',
         img: eqo,
         website: 'http://www.eqomusic.com',

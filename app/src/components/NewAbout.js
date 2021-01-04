@@ -31,15 +31,15 @@ const skills = [
 
 const NewAbout = (props) => {
     return (
-        <section class='about-wrapper'>
+        <section id='about' className='about-wrapper'>
             <h3>>_About</h3>
-            <section class='about-con'>
-                <div class='about-content-con'>
-                    <div class='about-content-h'><p> X</p><div></div><p>-</p></div>
-                    <div class='about-content'>
+            <section className='about-con'>
+                <div className='about-content-con'>
+                    <div className='about-content-h'><p> X</p><div></div><p>-</p></div>
+                    <div className='about-content'>
                         <h4>- About Aric -</h4>
                         <br></br>
-                        <p class='about-content-text'>
+                        <p className='about-content-text'>
                             Beginning this software journey, I never knew how much life would
                             play an important role to becoming a well rounded developer. Being
                             born in Arizona, raised in the MidWest and having traveled as far as
@@ -48,7 +48,7 @@ const NewAbout = (props) => {
                             boy, avid nerd for all things tech, and gamer when I have a spare
                             minute.
                         </p>
-                        <p class='about-content-text'>
+                        <p className='about-content-text'>
                             Now on the matter of Web Development, you might be asking "Why does
                             he want to be a Software Developer?". The short answer is because of
                             the Internet, the long answer starts back when I was a child. My era
@@ -59,7 +59,7 @@ const NewAbout = (props) => {
                             unknown knowledge. I was beholden to what the Internet was. It was
                             the last wild west of the world and this intrigued me greatly.
                         </p>
-                        <p class='about-content-text'>
+                        <p className='about-content-text'>
                             I never lost site on my goal of becoming a developer. I continued to
                             learn in and outside of Lambda School, always pushing myself to know
                             more. This drive to be the best allowed me to jump into creating EQO
@@ -71,9 +71,9 @@ const NewAbout = (props) => {
                     </div>
                     
                 </div>
-                <div class='about-skills'>
+                <div className='about-skills'>
                         <h4>SKILLS</h4>
-                        <div class='about-skills-pills'>
+                        <div className='about-skills-pills'>
                             {skills.map((item, index) => {
                                 return <div key={index}>{item}</div>;
                             })}

@@ -11,10 +11,10 @@ import './styles/Dashboard.css';
 
 const Dashboard = (props) => {
     return (
-        <section class='dashboard-wrapper'>
+        <section className='dashboard-wrapper'>
             <Sidebar />
             <NewHeader />
-            <section class='dashboard-content'>
+            <section id='home' className='dashboard-content'>
                 <HeroText />
                 <NewProjects />
                 <NewAbout />

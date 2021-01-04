@@ -4,50 +4,49 @@ import './styles/NewProjects.css';
 
 const NewProjects = () => {
     return (
-        <section class='projects-wrapper'>
+        <section id='projects' className='projects-wrapper'>
             <h3>>_Projects</h3>
 
             {projData.map((item, index) => {
                 return (
-                    <section class={item.id % 2 == 0 ? 'mention_con_reverse' : 'mention_con'} key={index}>
-                        <div class="projects_title_con">
-                            <img src={item.img} class='projects-image' />
+                    <section className={item.id % 2 === 0 ? 'mention_con_reverse' : 'mention_con'} key={index}>
+                        <div className="projects_title_con">
+                            <img src={item.img} alt='project' className='projects-image' />
                             <div>
                                 <a
-                                    class='learn-a'
+                                    className='learn-a'
                                     href={item.website}
                                 >
-                                    <span class='learn-more'>Website</span>
+                                    <span className='learn-more'>Website</span>
                                 </a>
                                 {item.repo === '' ? null : <a
-                                    class='learn-a'
+                                    className='learn-a'
                                     href={item.repo}
                                 >
-                                    <span class='learn-more'>Repo</span>
+                                    <span className='learn-more'>Repo</span>
                                 </a>}
                             </div>
                             
                         </div>
-                        <div class='projects-content'>
-                            <h6>{item.title}</h6>
-                            <div class='projects-roles'>
-                                <h7>Roles</h7>
+                        <div className='projects-content'>
+                            <h5>{item.title}</h5>
+                            <div className='projects-roles'>
+                                <h6>Roles</h6>
                                 <p>{item.roles}</p>
                             </div>
-                            <p class='project-text grey'>
+                            <p className='project-text grey'>
                                 {item.desc}
                             </p>
                             
-                            <div class='projects-skills'>
-                                <h8>Stack</h8>
-                                <div class='projects-skills-con'>
+                            <div className='projects-skills'>
+                                <h6>Stack</h6>
+                                <div className='projects-skills-con'>
                                     {item.stack.map((item, index) => {
                                         return (
-                                            <div class='projects-pill' key={index}>{item}</div>
+                                            <div className='projects-pill' key={index}>{item}</div>
                                         );
                                     })}
                                 </div>
-                                
                             </div>
                         </div>
                     </section>

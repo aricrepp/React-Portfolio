@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import * as firebase from 'firebase/app';
 import { db, functions } from '../firebase/firebaseConfig'
 import './styles/Contact.css';
 
@@ -46,10 +45,10 @@ const Contact = (props) => {
     }
 
     return (
-        <section class='contact-wrapper'>
+        <section id='contact' className='contact-wrapper'>
             <h3>>_Contact</h3>
-            <section class='contact-con'> 
-                <div class='contact-callout'>
+            <section className='contact-con'> 
+                <div className='contact-callout'>
                     <h4>Want to get in touch?</h4>
                     <h5>Let's talk!</h5>
                 </div>

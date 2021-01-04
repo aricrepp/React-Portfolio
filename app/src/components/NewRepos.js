@@ -19,12 +19,12 @@ const NewRepos = (props) => {
         const currentItems = props.repo.slice(indexOfFirstItem, indexOfLastItem)
 
         return (
-            <section class="repos-wrapper">
+            <section id='repos' className="repos-wrapper">
                 <h3>>_Repos</h3>
-                <section class='calender-repos-con'>
-                    <div class="calender-con">
+                <section className='calender-repos-con'>
+                    <div className="calender-con">
                         <h4>
-                            <a href="https://github.com/aricrepp" class="github-link">
+                            <a href="https://github.com/aricrepp" className="github-link">
                                 @aricrepp
                             </a>{' '}
                             on Github!
@@ -40,23 +40,23 @@ const NewRepos = (props) => {
                     </div>
 
                     <h5>List of Repos:</h5>
-                    <div class="repo-card-list-con">
+                    <div className="repo-card-list-con">
                         {currentItems.map((item, index) => {
                             return (
-                                <div key={index} class="repo-card-container">
-                                    <section class="repo-card">
-                                        <h7 class='repo-card-title'>
+                                <div key={index} className="repo-card-container">
+                                    <section className="repo-card">
+                                        <h6 className='repo-card-title'>
                                             {item.name}
-                                        </h7>
-                                        <div class="repo-card-content">
+                                        </h6>
+                                        <div className="repo-card-content">
                                             <p>
                                                 {item.description
                                                 ? item.description
                                                 : 'No default description, check out the README in the repo!'}
                                             </p>
                                         </div>
-                                        <footer class="repo-footer">
-                                            <a href={item.html_url} class="repo-link">
+                                        <footer className="repo-footer">
+                                            <a href={item.html_url} className="repo-link">
                                                 Repo 
                                             </a>
                                         </footer>
@@ -65,7 +65,7 @@ const NewRepos = (props) => {
                             )
                         })}
                     </div>
-                    <div class='pagination-con'>
+                    <div className='pagination-con'>
                         <Pagination
                             itemClass='pagination-tabs'
                             itemClassLast='pagination-tabs-last'
@@ -85,11 +85,11 @@ const NewRepos = (props) => {
         );
     } else {
         return (
-            <section class="repos_con">
-                <section class='calendar-repos-con'>
-                    <div class="calender-con">
+            <section className="repos_con">
+                <section className='calendar-repos-con'>
+                    <div className="calender-con">
                         <h3>
-                            <a href="https://github.com/aricrepp" class="github-link">
+                            <a href="https://github.com/aricrepp" className="github-link">
                                 @aricrepp
                             </a>{' '}
                             on Github!

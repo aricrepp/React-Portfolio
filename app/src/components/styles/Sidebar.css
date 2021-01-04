@@ -29,18 +29,19 @@
     top: 25px;
     width: calc(100% - 26px);
 }
+
 .group1 {
     height: 300px;
+    width: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
 }
+
 .icon-awesome {
     color: white;
     height: 25px;
-    
 }
 
 .group1 a:hover{

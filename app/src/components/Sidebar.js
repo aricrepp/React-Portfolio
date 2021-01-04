@@ -13,12 +13,12 @@ const Sidebar = () => {
     };
 
     return (
-        <div class="sidebar-container">
-            <img class='aric-small' src={photo}/>
-            <div class='group1'>
-                <a onClick={openFile}><FontAwesomeIcon  icon={faPaperclip} class='icon-awesome' /></a>
-                <a href="https://www.github.com/aricrepp"><FontAwesomeIcon  icon={faGithub} class='icon-awesome' /></a>
-                <a href="https://www.linkedin.com/in/aric-repp/"><FontAwesomeIcon  icon={faLinkedin} class='icon-awesome' /></a>
+        <div className="sidebar-container">
+            <img className='aric-small' alt='Aric' src={photo}></img>
+            <div className='group1'>
+                <a target='_blank' rel="noopener noreferrer" href='/#' onClick={openFile}><FontAwesomeIcon  icon={faPaperclip} className='icon-awesome' style={{width: '25px'}}/></a>
+                <a target='_blank' rel="noopener noreferrer" href="https://www.github.com/aricrepp"><FontAwesomeIcon  icon={faGithub} className='icon-awesome' style={{width: '25px'}}/></a>
+                <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/aric-repp/"><FontAwesomeIcon  icon={faLinkedin} className='icon-awesome' style={{width: '25px'}}/></a>
             </div>
         </div>
     );

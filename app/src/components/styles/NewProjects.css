@@ -75,7 +75,7 @@
     justify-content: space-around;
 }
 
-.projects-content h6, .projects-content-rev h6{
+.projects-content h5, .projects-content-rev h5{
     font-size: 1.7rem;
     font-family: "OpenSans-Bold", Helvetica, Arial, serif;
     font-weight: 700;
@@ -89,7 +89,7 @@
     justify-content: space-evenly;
 }
 
-.projects-roles h7{
+.projects-roles h6{
     font-weight: 500;
     font-size: 1.4rem;
     color: #222;
@@ -197,7 +197,7 @@ span.learn-more:active::before {
     width: 100%;
 }
 
-.projects-skills h8{
+.projects-skills h6{
     font-weight: 500;
     font-size: 1.4rem;
     color: #222;

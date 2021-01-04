@@ -70,6 +70,8 @@
     font-style: normal;
     font-weight: 700;
     padding: 30px;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .links-h-bg{
@@ -79,6 +81,8 @@
     font-style: normal;
     font-weight: 700;
     padding: 20px 30px 20px 30px;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .links-h:hover{
